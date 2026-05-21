@@ -1,0 +1,25 @@
+name: Build and Inject Secrets
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  inject-secrets:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Pull down the code
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # 2. Swap out the placeholder for the real secret
+      - name: Inject ABC_SECRET into HTML
+        env:
+          MY_REAL_SECRET: ${{ secrets.ABC_SECRET }}
+        run: |
+          sed -i "s|REPLACE_ME_WITH_ABC_SECRET|$MY_REAL_SECRET|g" index.html
+
+      # 3. Proceed with your build/deployment steps here
+      - name: Next Build/Deploy Step
+        run: echo "Proceeding with build using the modified index.html file..."
