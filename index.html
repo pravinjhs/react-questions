@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React.JS Cheat Sheet - 2026 Edition</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+    <header class="sticky top-0 z-40 w-full bg-white border-b border-slate-200 px-6 py-4 flex items-center justify-between shadow-xs">
+        <div>
+            <h1 class="text-xl font-bold text-indigo-600 flex items-center gap-2">
+                <span>&lt;/&gt;</span> React.JS Cheat Sheet
+            </h1>
+            <p class="text-xs text-slate-500">2026 Edition • Beginner to Advanced by Abhay Tiwari</p>
+        </div>
+        <a href="https://github.com" target="_blank" class="text-sm bg-slate-900 hover:bg-slate-800 text-white px-4 py-2 rounded-lg font-medium transition-colors">
+            View on GitHub
+        </a>
+    </header>
+
+    <div class="flex max-w-7xl mx-auto">
+        <nav class="w-64 h-[calc(100vh-73px)] sticky top-[73px] overflow-y-auto border-r border-slate-200 p-6 hidden md:block bg-white">
+            <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4">Table of Contents</p>
+            <ul class="space-y-2 text-sm font-medium">
+                <li><a href="#intro" class="block p-2 text-slate-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors">1. Introduction</a></li>
+                <li><a href="#setup" class="block p-2 text-slate-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors">2. Environment Setup</a></li>
+                <li><a href="#jsx" class="block p-2 text-slate-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors">3. JSX Basics</a></li>
+                <li><a href="#components" class="block p-2 text-slate-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors">4. Components & Props</a></li>
+                <li><a href="#state" class="block p-2 text-slate-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors">5. State Management</a></li>
+                <li><a href="#events" class="block p-2 text-slate-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors">6. Event Handling</a></li>
+                <li><a href="#conditional" class="block p-2 text-slate-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors">7. Conditional Rendering</a></li>
+                <li><a href="#lists" class="block p-2 text-slate-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors">8. Lists & Keys</a></li>
+                <li><a href="#forms" class="block p-2 text-slate-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors">9. Forms in React</a></li>
+                <li><a href="#useeffect" class="block p-2 text-slate-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors">10. useEffect Hook</a></li>
+                <li><a href="#hooks" class="block p-2 text-slate-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors">11. Other Hooks</a></li>
+                <li><a href="#router" class="block p-2 text-slate-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors">12. React Router v6+</a></li>
+                <li><a href="#portals" class="block p-2 text-slate-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors">20. Portals</a></li>
+                <li><a href="#fragments" class="block p-2 text-slate-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors">21. Fragments & StrictMode</a></li>
+                <li><a href="#hoc" class="block p-2 text-slate-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors">22. HOCs</a></li>
+                <li><a href="#testing" class="block p-2 text-slate-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors">24. Testing Apps</a></li>
+                <li><a href="#apis" class="block p-2 text-slate-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors">26. React with APIs</a></li>
+                <li><a href="#mistakes" class="block p-2 text-slate-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors">Common Mistakes</a></li>
+                <li><a href="#tasks" class="block p-2 text-slate-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors">Practice Tasks</a></li>
+            </ul>
+        </nav>
+
+        <main class="flex-1 p-6 md:p-12 max-w-4xl space-y-16 overflow-x-hidden">
+            
+            <section id="intro" class="scroll-mt-24 space-y-4">
+                <h2 class="text-2xl font-bold border-b border-slate-200 pb-2 text-slate-900">1. Introduction to React</h2>
+                <p class="text-slate-600 leading-relaxed">
+                    React is a JavaScript library used to build user interfaces (UIs). It helps you create fast, easily manageable single-page applications (SPAs) that update dynamically without reloading the entire browser window.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
+                    <div class="p-4 bg-white rounded-xl border border-slate-200 shadow-xs">
+                        <h4 class="font-semibold text-slate-800 mb-1">Key Features</h4>
+                        <ul class="list-disc pl-5 text-sm text-slate-600 space-y-1">
+                            <li>Component-based ecosystem</li>
+                            <li>High reusability of building blocks</li>
+                            <li>Fast performance via the Virtual DOM</li>
+                        </ul>
+                    </div>
+                    <div class="p-4 bg-white rounded-xl border border-slate-200 shadow-xs">
+                        <h4 class="font-semibold text-slate-800 mb-1">Virtual DOM Mechanics</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            React maintains an in-memory duplicate copy of the real DOM structure. When state shifts, it computes changes dynamically against this copy and alters <em>only</em> the uniquely affected nodes to maximize rendering velocities.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="overflow-x-auto rounded-lg border border-slate-200 bg-white shadow-xs">
+                    <table class="w-full text-left border-collapse text-sm">
+                        <thead class="bg-slate-50 text-slate-700 font-semibold border-b border-slate-200">
+                            <tr>
+                                <th class="p-3">Feature</th>
+                                <th class="p-3">React</th>
+                                <th class="p-3">Vanilla JS</th>
+                                <th class="p-3">Frameworks (Angular/Vue)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 text-slate-600">
+                            <tr><td class="p-3 font-medium text-slate-900">Structure</td><td class="p-3">Component-based</td><td class="p-3">No structure</td><td class="p-3">Component-based</td></tr>
+                            <tr><td class="p-3 font-medium text-slate-900">Speed</td><td class="p-3 text-emerald-600 font-semibold">Very Fast</td><td class="p-3">Medium</td><td class="p-3">Fast</td></tr>
+                            <tr><td class="p-3 font-medium text-slate-900">DOM Updates</td><td class="p-3">Virtual DOM</td><td class="p-3">Full page reload</td><td class="p-3">Virtual / Optimized DOM</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="setup" class="scroll-mt-24 space-y-4">
+                <h2 class="text-2xl font-bold border-b border-slate-200 pb-2 text-slate-900">2. Environment Setup</h2>
+                <p class="text-slate-600 text-sm">Initialize frameworks effortlessly using modern build engines.</p>
+                <div class="space-y-2">
+                    <p class="text-sm font-semibold text-slate-700">Setting up standard environments with Vite (Recommended):</p>
+                    <pre class="bg-slate-900 text-slate-200 p-4 rounded-lg text-xs font-mono overflow-x-auto">
+npm create vite@latest my-vite-app
+cd my-vite-app
+npm install
+npm run dev</pre>
+                </div>
+            </section>
+
+            <section id="jsx" class="scroll-mt-24 space-y-4">
+                <h2 class="text-2xl font-bold border-b border-slate-200 pb-2 text-slate-900">3. JSX Basics</h2>
+                <p class="text-slate-600">JavaScript XML (JSX) allows writing cleanly semantic markup explicitly inside native JavaScript architectures.</p>
+                <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-lg text-sm text-amber-900">
+                    <strong>Syntax Rules:</strong> Must consistently return a singular consolidated parent element. Attributes employ strict camelCase mapping configurations (e.g., <code>className</code> or <code>onClick</code>).
+                </div>
+                <pre class="bg-slate-900 text-slate-200 p-4 rounded-lg text-xs font-mono overflow-x-auto">
+// Embedding Expressions Expression Scope Demo
+const name = "Rudra";
+const element = &lt;h1&gt;Hello, {name}!&lt;/h1&gt;;</pre>
+            </section>
+
+            <section id="components" class="scroll-mt-24 space-y-4">
+                <h2 class="text-2xl font-bold border-b border-slate-200 pb-2 text-slate-900">4. Components & Props</h2>
+                <pre class="bg-slate-900 text-slate-200 p-4 rounded-lg text-xs font-mono overflow-x-auto">
+// Functional Components utilize properties directly through passing configurations
+function Welcome({ name }) {
+  return &lt;h1&gt;Hello, {name}&lt;/h1&gt;;
+}
+
+// Rendering components inside application layers
+&lt;Welcome name="Rudra" /&gt;</pre>
+            </section>
+
+            <section id="state" class="scroll-mt-24 space-y-4">
+                <h2 class="text-2xl font-bold border-b border-slate-200 pb-2 text-slate-900">5. State Management</h2>
+                <p class="text-slate-600 text-sm">Leveraging reactive local tracking states explicitly using structural hooks.</p>
+                <pre class="bg-slate-900 text-slate-200 p-4 rounded-lg text-xs font-mono overflow-x-auto">
+import { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+  return (
+    &lt;div&gt;
+      &lt;p&gt;Count: {count}&lt;/p&gt;
+      &lt;button onClick={() =&gt; setCount(count + 1)}&gt;Add&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}</pre>
+            </section>
+
+            <section id="useeffect" class="scroll-mt-24 space-y-4">
+                <h2 class="text-2xl font-bold border-b border-slate-200 pb-2 text-slate-900">10. useEffect Hook</h2>
+                <p class="text-slate-600 text-sm">Isolating structural side-effects cleanly across specific engine lifecycles.</p>
+                <pre class="bg-slate-900 text-slate-200 p-4 rounded-lg text-xs font-mono overflow-x-auto">
+import { useEffect } from 'react';
+
+useEffect(() =&gt; {
+  console.log("Component dynamically mounted into DOM layer");
+}, []); // Empty dependency configurations compute exactly once</pre>
+            </section>
+
+            <section id="portals" class="scroll-mt-24 space-y-4">
+                <h2 class="text-2xl font-bold border-b border-slate-200 pb-2 text-slate-900">20. Portals in React</h2>
+                <p class="text-slate-600 text-sm">Rendering interactive markup targets completely outside isolated traditional mounting hierarchies.</p>
+                <pre class="bg-slate-900 text-slate-200 p-4 rounded-lg text-xs font-mono overflow-x-auto">
+import ReactDOM from "react-dom";
+
+function Modal({ onClose, children }) {
+  return ReactDOM.createPortal(
+    &lt;div class="modal-overlay"&gt;
+      &lt;div class="modal-content"&gt;{children}&lt;/div&gt;
+    &lt;/div&gt;,
+    document.getElementById("portal-root")
+  );
+}</pre>
+            </section>
+
+            <section id="mistakes" class="scroll-mt-24 space-y-4">
+                <h2 class="text-2xl font-bold border-b border-slate-200 pb-2 text-slate-900">Common Beginner Mistakes</h2>
+                <div class="overflow-x-auto rounded-lg border border-slate-200 bg-white shadow-xs">
+                    <table class="w-full text-left border-collapse text-sm">
+                        <thead class="bg-slate-50 text-slate-700 font-semibold border-b border-slate-200">
+                            <tr>
+                                <th class="p-3">Mistake</th>
+                                <th class="p-3">Why It's a Problem</th>
+                                <th class="p-3">Correct Approach</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 text-slate-600">
+                            <tr>
+                                <td class="p-3 font-medium text-rose-600">Mutating state directly</td>
+                                <td class="p-3">React components won't register mutations or fire re-renders.</td>
+                                <td class="p-3 font-medium text-emerald-600">Always safely fire setState wrappers.</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-medium text-rose-600">Missing keys in lists</td>
+                                <td class="p-3">React breaks standard performance tracing across dynamic list layers.</td>
+                                <td class="p-3 font-medium text-emerald-600">Pass isolated distinct tracking indices via key properties.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="tasks" class="scroll-mt-24 space-y-4">
+                <h2 class="text-2xl font-bold border-b border-slate-200 pb-2 text-slate-900">Practice Tasks for Beginners</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-4 bg-white border border-slate-200 rounded-lg shadow-xs flex items-start gap-3">
+                        <span class="bg-indigo-100 text-indigo-700 font-bold rounded px-2.5 py-1 text-xs">01</span>
+                        <div>
+                            <h4 class="font-semibold text-sm">Counter Application</h4>
+                            <p class="text-xs text-slate-500">Practices basic useState allocations and basic mouse event captures.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-white border border-slate-200 rounded-lg shadow-xs flex items-start gap-3">
+                        <span class="bg-indigo-100 text-indigo-700 font-bold rounded px-2.5 py-1 text-xs">02</span>
+                        <div>
+                            <h4 class="font-semibold text-sm">Joke Fetcher App</h4>
+                            <p class="text-xs text-slate-500">Practices remote layout handling across useEffect triggers and standard API fetch actions.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <footer class="bg-white border-t border-slate-200 py-6 mt-12 text-center text-xs text-slate-400">
+        <p>© 2026 React.JS Document Engine Project. Open Source Materials.</p>
+    </footer>
+
+</body>
+</html>
