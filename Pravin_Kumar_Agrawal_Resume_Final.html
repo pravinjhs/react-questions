@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <title>Pravin Kumar Agrawal - Resume</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 8mm;
+        background-color: #f8fafc;
+      }
+      :root {
+        --primary-color: #1976d2;
+        --secondary-color: #ff9800;
+        --text-color: #0f172a;
+        --background-color: #024ddf; /* #0d9488; */
+        --font-size-10: 10pt;
+        --font-size-9: 10pt;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 10px;
+        padding: 10px;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #334155;
+        background-color: #f8fafc;
+        line-height: 1.25;
+        font-size: 11pt;
+      }
+      .header-container {
+        border-bottom: 2px solid #e2e8f0;
+        padding-bottom: 15px;
+        margin-bottom: 18px;
+      }
+      h1 {
+        font-size: 22pt;
+        color: #0f172a;
+        margin: 0 0 4px 0;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+      }
+      .headline {
+        font-size: 11pt;
+        color: var(--background-color);
+        font-weight: 600;
+        margin: 0 0 12px 0;
+        letter-spacing: 0.2px;
+      }
+      .contact-info {
+        display: table;
+        width: 100%;
+        margin-top: 8px;
+      }
+      .contact-row {
+        display: table-row;
+      }
+      .contact-item {
+        display: table-cell;
+        font-size: var(--font-size-9);
+        color: #475569;
+        padding-right: 15px;
+        padding-bottom: 4px;
+      }
+      .contact-item strong {
+        color: #1e293b;
+      }
+      .contact-item a {
+        color: #475569;
+        text-decoration: none;
+      }
+      h2 {
+        font-size: 12pt;
+        color: #0f172a;
+        text-transform: uppercase;
+        margin: 18px 0 8px 0;
+        letter-spacing: 0.8px;
+        font-weight: 700;
+        display: block;
+        border-left: 3.5px solid var(--background-color);
+        padding-left: 8px;
+        border-bottom: 3.5px solid var(--background-color);
+        padding-left: 8px;
+        page-break-after: avoid;
+      }
+      .summary-text {
+        font-size: var(--font-size-10);
+        color: #334155;
+        text-align: justify;
+        margin-bottom: 10px;
+      }
+      .summary-bullets {
+        margin: 0;
+        padding-left: 18px;
+      }
+      .summary-bullets li {
+        margin-bottom: 4px;
+        font-size: var(--font-size-10);
+      }
+      .skills-table {
+        display: table;
+        width: 100%;
+        margin-top: 6px;
+        border-collapse: collapse;
+      }
+      .skills-row {
+        display: table-row;
+      }
+      .skills-category {
+        display: table-cell;
+        width: 22%;
+        font-weight: 700;
+        color: #1e293b;
+        font-size: 9pt;
+        padding: 4px 6px 4px 0;
+        vertical-align: top;
+      }
+      .skills-list {
+        display: table-cell;
+        width: 78%;
+        font-size: 9pt;
+        color: #334155;
+        padding: 4px 0 4px 6px;
+        vertical-align: top;
+      }
+      .job-block {
+        margin-bottom: 16px;
+        page-break-inside: auto;
+      }
+      .job-header {
+        display: table;
+        width: 100%;
+        margin-bottom: 4px;
+        page-break-after: avoid;
+      }
+      .job-title-company {
+        display: table-cell;
+        text-align: left;
+        vertical-align: bottom;
+        width: 75%;
+      }
+      .company-name {
+        font-size: 11pt;
+        font-weight: 700;
+        color: #0f172a;
+      }
+      .job-title {
+        font-size: 10pt;
+        font-weight: 600;
+        color: #475569;
+        font-style: italic;
+        margin-top: 1px;
+      }
+      .job-meta {
+        display: table-cell;
+        text-align: right;
+        vertical-align: top;
+        font-size: 9pt;
+        color: #64748b;
+        font-weight: 500;
+        width: 25%;
+      }
+      .project-block {
+        margin-top: 6px;
+        padding-left: 0px;
+        page-break-inside: auto;
+      }
+      .project-title {
+        font-size: var(--font-size-10);
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 2px;
+        page-break-after: avoid;
+      }
+      .project-links {
+        font-size: var(--font-size-9);
+        color: var(--background-color);
+        margin-bottom: 4px;
+        font-weight: 500;
+        page-break-after: avoid;
+      }
+      .project-links a {
+        color: var(--background-color);
+        text-decoration: none;
+      }
+      .bullet-list {
+        margin: 4px 0 6px 0;
+        padding-left: 16px;
+      }
+      .bullet-list li {
+        margin-bottom: 3px;
+        font-size: 9pt;
+        text-align: justify;
+      }
+      .tech-stack-inline {
+        font-size: var(--font-size-9);
+        color: #475569;
+        margin-top: 4px;
+        margin-bottom: 8px;
+        background-color: #f1f5f9;
+        padding: 4px 8px;
+        border-radius: 4px;
+        border-left: 2px solid #cbd5e1;
+        page-break-inside: avoid;
+      }
+      .edu-table {
+        display: table;
+        width: 100%;
+        margin-bottom: 8px;
+      }
+      .edu-row {
+        display: table-row;
+      }
+      .edu-cell-left {
+        display: table-cell;
+        text-align: left;
+        vertical-align: top;
+        padding-bottom: 6px;
+      }
+      .edu-degree {
+        font-size: var(--font-size-10);
+        font-weight: 700;
+        color: #0f172a;
+      }
+      .edu-school {
+        font-size: 9pt;
+        color: #475569;
+      }
+      .edu-cell-right {
+        display: table-cell;
+        text-align: right;
+        vertical-align: top;
+        font-size: 9pt;
+        color: #64748b;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-container">
+      <h1>Pravin Kumar Agrawal</h1>
+      <div class="headline">
+        Senior Software Engineer II | Technical Lead | ReactJS Expert || 11+
+        Years of experience in Leading Scalable Web Application Development
+      </div>
+      <div class="contact-info">
+        <div class="contact-row">
+          <div class="contact-item"><strong>Phone:</strong> +91-9873648928</div>
+          <div class="contact-item">
+            <strong>Email:</strong> pravinagrawal145@gmail.com
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-item">
+            <strong>LinkedIn:</strong> https://www.linkedin.com/in/pravinjhs/
+          </div>
+          <div class="contact-item">
+            <strong>Address:</strong> B59, Swastik City, Unnao Balaji Road,
+            Burah, Jhansi, UP 284002
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Executive Summary</h2>
+    <div class="summary-text">
+      Result-driven Senior Software Engineer with over 11+ years of total
+      professional IT experience, including 8+ years of dedicated expertise in
+      large-scale modern web architecture, frontend state engineering, and large
+      ecosystem development.
+    </div>
+    <ul class="summary-bullets">
+      <li>
+        <strong>Technical Depth:</strong> Mastery over production environments
+        deploying JavaScript, TypeScript, ReactJS, NextJS, AngularJS, HTML5,
+        CSS3, and NodeJS.
+      </li>
+      <li>
+        <strong>Architectural Focus:</strong> Proven track record in complex
+        state management using Redux Toolkit, foundational setup of scalable
+        frameworks, and seamless execution of cross-device responsive UI models.
+      </li>
+      <li>
+        <strong>Compliance &amp; Process:</strong> Champion of digital
+        inclusivity through rigorous adherence to WCAG Standards and advanced
+        workflow accelerations utilizing Claude AI code execution tools within
+        agile frameworks.
+      </li>
+    </ul>
+
+    <h2>Core Technical Skills</h2>
+    <div class="skills-table">
+      <div class="skills-row">
+        <div class="skills-category">Frontend Architecture</div>
+        <div class="skills-list">
+          ReactJS, Redux Toolkit, TypeScript, JavaScript (ES6+), NextJS, HTML5,
+          CSS3, AngularJS, JQuery, Angular 2/5/7/8, Tailwind CSS, Styled
+          Components, Bootstrap, Micro Frontend Architecture
+        </div>
+      </div>
+      <div class="skills-row">
+        <div class="skills-category">Backend &amp; Cloud APIs</div>
+        <div class="skills-list">
+          NodeJS, Express.js, GraphQL, RESTful Web Services, Core Java, Basics
+          of Spring Boot, Apache Kafka Microservices Architecture
+        </div>
+      </div>
+      <div class="skills-row">
+        <div class="skills-category">UI/UX Design Workflow</div>
+        <div class="skills-list">
+          Figma Component Translation, Interactive Analytics Wireframing,
+          Handoff Optimization, WCAG Standard, Storybook
+        </div>
+      </div>
+      <div class="skills-row">
+        <div class="skills-category">Testing Frameworks</div>
+        <div class="skills-list">
+          Jest (Unit/Integration Testing), Mocha, Karma E2E Testing Runner
+        </div>
+      </div>
+      <div class="skills-row">
+        <div class="skills-category">DevOps &amp; Observability</div>
+        <div class="skills-list">
+          Amazon Web Services (AWS), CI/CD Automation (Jenkins, GitLab
+          Pipelines), Docker Containerization, Logging &amp; Monitoring (Splunk,
+          Datadog, Kibana), PagerDuty Incident Management
+        </div>
+      </div>
+      <div class="skills-row">
+        <div class="skills-category">Mobile Engineering</div>
+        <div class="skills-list">
+          React Native (Cross-Platform Android &amp; iOS Production Releases),
+          Ionic Framework, Angular JS
+        </div>
+      </div>
+      <div class="skills-row">
+        <div class="skills-category">Build &amp; Utilities Tools</div>
+        <div class="skills-list">
+          Webpack, Vite, Rollup.js, Mustache.js, AJAX Async Paradigms, Bootstrap
+          Grid Systems, Storybook UI Components, Transifex Localization
+          Management
+        </div>
+      </div>
+      <div class="skills-row">
+        <div class="skills-category">Core Competencies</div>
+        <div class="skills-list">
+          Frontend Architecture, Responsive UI/UX Development, Performance
+          Optimization, Debugging, Root Cause Analysis, Agile Development, Code
+          Review, Technical Documentation and Design, Mentorship, Leadership,
+          Collaboration with designers, product managers, and other developers
+          to deliver high-quality applications
+        </div>
+      </div>
+    </div>
+
+    <h2>Professional Experience</h2>
+    <div class="job-block">
+      <div class="job-header">
+        <div class="job-title-company">
+          <span class="company-name"
+            >Ticketmaster India Private Limited, Gurugram</span
+          ><br />
+          <span class="job-title"
+            >• Senior Software Engineer II (Jul 2024 - Present) <br />
+            • Senior Software Engineer I (Mar 2020 - Jun 2024)</span
+          >
+        </div>
+        <div class="job-meta">Mar 2020 — Present</div>
+      </div>
+      <div class="project-block">
+        <div class="project-title">
+          Global Accounts, Authentication, Customer &amp; User Management
+          Platforms
+        </div>
+        <div class="project-links">
+          Production Sites: ticketmaster.com | ticketmaster.co.uk |
+          ticketmaster.ie | ticketmaster.sg
+        </div>
+        <ul class="bullet-list">
+          <li>
+            Led the architecture, design, and development of core enterprise
+            customer and user management platforms, including ACPM, ACAU,
+            Webapp-Common-UI, GDS, ACGA, ATCM, and ASVD webapps
+          </li>
+          <li>
+            Architected the flagship ACPM and ASVD Global Accounts system from
+            scratch, implementing an enterprise-grade
+            <strong>NextJS</strong> and React base structure styled with
+            isolation patterns via Styled Components.
+          </li>
+          <li>
+            Centralized complex global application states by moving legacy
+            paradigms into high-performance
+            <strong>Redux Toolkit</strong> structures, minimizing re-renders
+            across synchronous authentication pipelines.
+          </li>
+          <li>
+            Engineered micro-service aggregators on the server level utilizing
+            <strong>Express.js</strong> and constructed robust, data-efficient
+            query protocols with <strong>GraphQL</strong>, dropping network data
+            overhead.
+          </li>
+          <li>
+            Pioneered accessibility standard compliance frameworks, executing
+            widespread refactoring to adhere strictly to
+            <strong>WCAG Standards</strong> for screen readers, navigation, and
+            core visual elements.
+          </li>
+          <!-- <li>Translated wireframes and interactive mockups seamlessly from <strong>Figma</strong> into reusable, decoupled Storybook UI library components.</li> -->
+          <li>
+            Implemented cross-continental globalization mechanisms via Transifex
+            across strategic webapps (ASMA, MYAM, AACU, ATCM) enabling
+            localization protocols for US, UK, CA, FR, NL, and NZ markets.
+          </li>
+          <li>
+            Deployed mission-critical identity protection configurations
+            including Multi-Factor Authentication (MFA), live session
+            Freezing/Locking within internal monitoring platforms (ATCS), and
+            role visibility switches.
+          </li>
+        </ul>
+        <div class="tech-stack-inline">
+          <strong>Tech Stack:</strong> NextJS, ReactJS, Redux Toolkit,
+          Express.js, GraphQL, TypeScript, JavaScript, HTML, CSS, Figma, WCAG
+          Standard, GitLab CI/CD, JIRA, Splunk, AWS Infrastructure, Jenkins
+          pipelines, PagerDuty.
+        </div>
+      </div>
+    </div>
+
+    <div class="job-block">
+      <div class="job-header">
+        <div class="job-title-company">
+          <span class="company-name">Orange Business Services, Gurugram</span
+          ><br />
+          <span class="job-title">Senior Software Engineer</span>
+        </div>
+        <div class="job-meta">Aug 2018 — Mar 2020</div>
+      </div>
+      <div class="project-block">
+        <div class="project-title">Live Data Hub Platform</div>
+        <ul class="bullet-list">
+          <li>
+            Engineered high-throughput smart-city data solutions supporting
+            administrative decision-making workflows and deep metadata analytics
+            parsing.
+          </li>
+          <li>
+            Created a decoupled, reusable asynchronous File Upload framework
+            element using Angular 7, increasing system processing speeds for
+            voluminous data packages.
+          </li>
+          <li>
+            Optimized web elements utilizing strict performance scoring
+            benchmarks, enhancing viewport rendering speeds and accessibility
+            behaviors across responsive screen formats.
+          </li>
+        </ul>
+        <div class="tech-stack-inline">
+          <strong>Tech Stack:</strong> Angular 2/4/7, TypeScript, JavaScript,
+          HTML, CSS, Karma Runner, Webpack, Jenkins.
+        </div>
+      </div>
+    </div>
+
+    <div class="job-block">
+      <div class="job-header">
+        <div class="job-title-company">
+          <span class="company-name">GlobalLogic India Pvt Ltd, Noida</span
+          ><br />
+          <span class="job-title">Software Engineer</span>
+        </div>
+        <div class="job-meta">Sep 2016 — Aug 2018</div>
+      </div>
+      <div class="project-block">
+        <div class="project-title">
+          Ericsson - MediaKind MediaFirst Video Application
+        </div>
+        <ul class="bullet-list">
+          <li>
+            Developed converged multiscreen ecosystem players linking Pay TV
+            architectures with modern Over-The-Top (OTT) cross-platform delivery
+            models.
+          </li>
+          <li>
+            Designed standard viewing responsive frameworks tailored explicitly
+            to 1ft (mobile), 2ft (desktop), and 10ft (Smart TV) displays
+            ensuring strict interaction alignment.
+          </li>
+          <li>
+            Re-engineered the cross-team UX Tool from architectural foundations
+            to address deep layout lag; refactored the internal UI Component
+            Selector engine to mimic Chrome Inspector native properties.
+          </li>
+        </ul>
+      </div>
+      <div class="project-block" style="margin-top: 10px">
+        <div class="project-title">
+          Rodan + Fields - R + F Pulse Web/Mobile Application
+        </div>
+        <ul class="bullet-list">
+          <li>
+            It is a mobile-first digital business suite and web/mobile
+            application designed for Brand Consultants.
+          </li>
+          <li>
+            Wrote performance-optimized Android and iOS views using React
+            Native, incorporating deep phone modules such as hardware-integrated
+            contacts, direct email client protocols, and calling hooks.
+          </li>
+        </ul>
+      </div>
+      <div class="tech-stack-inline">
+        <strong>Tech Stack:</strong> Backbone.js, ReactJS, React Native,
+        TypeScript, JavaScript, HTML, CSS, iOS/Android SDK wrappers.
+      </div>
+    </div>
+
+    <div class="job-block">
+      <div class="job-header">
+        <div class="job-title-company">
+          <span class="company-name">Mobiloitte Technologies, New Delhi</span
+          ><br />
+          <span class="job-title">Associate Software Engineer</span>
+        </div>
+        <div class="job-meta">Dec 2014 — Sep 2016</div>
+      </div>
+      <div class="project-block">
+        <div class="project-title">HD Supply Solutions Mobile Platform</div>
+        <ul class="bullet-list">
+          <li>
+            Integrated hardware barcode and laser scanning APIs directly into
+            commercial MRO inventory management systems.
+          </li>
+          <li>
+            Coded algorithmic localized indexing filtering structures to feed
+            instant autocomplete and context-aware product lookup modules.
+          </li>
+        </ul>
+      </div>
+      <div class="project-block" style="margin-top: 10px">
+        <div class="project-title">Secugo Security Community Framework</div>
+        <ul class="bullet-list">
+          <li>
+            Engineered localized public safety frameworks packing
+            hardware-accelerated 3D Touch quick access menus, secure in-app
+            purchases, and geofenced push notices via Google Maps APIs.
+          </li>
+          <li>
+            Crafted lightning-fast instant messaging rooms utilizing low-latency
+            full-duplex WebSocket connections.
+          </li>
+        </ul>
+      </div>
+      <div class="tech-stack-inline">
+        <strong>Tech Stack:</strong> React Native, AppCelerator, Titanium,
+        JavaScript, TypeScript, JSON, Android Studio / Xcode environments.
+      </div>
+    </div>
+
+    <h2>Education</h2>
+    <div class="edu-table">
+      <div class="edu-row">
+        <div class="edu-cell-left">
+          <span class="edu-degree">Master of Computer Application (MCA)</span
+          ><br />
+          <span class="edu-school"
+            >Uttar Pradesh Technical University, Lucknow, U.P.</span
+          >
+        </div>
+        <div class="edu-cell-right">2011 — 2014</div>
+      </div>
+      <div class="edu-row">
+        <div class="edu-cell-left">
+          <span class="edu-degree">Bachelor of Computer Application (BCA)</span
+          ><br />
+          <span class="edu-school"
+            >Makhanlal Chaturvedi National University of Journalism and
+            Communication, Bhopal, M.P.</span
+          >
+        </div>
+        <div class="edu-cell-right">2008 — 2011</div>
+      </div>
+    </div>
+  </body>
+</html>
